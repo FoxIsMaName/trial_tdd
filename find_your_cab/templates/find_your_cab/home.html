@@ -3,7 +3,7 @@
     <title>find your cab</title>
 </head>
 <body>
-    <h1>Let find your cab</h1>
+    <h1 style="text-align:center;">Let find your cab</h1>
 
     <table border=1>
         <tr>
@@ -11,12 +11,12 @@
             <td>Name driver</td>
             <td>Point</td>
         </tr>    
-   {% if cab_driv %}
-        {% for cabdriver in cab_driv %}
+   {% if driv_inform %}
+        {% for cabdriver in driv_inform %}
         <tr>
-            <td>{{ cabdriver.id_driver}}</td>
-            <td>{{ cabdriver.name_driver}}</td>
-            <td>{{ cabdriver.point}}</td>
+            <td>{{ cabdriver.id}}</td>
+            <td><a  href="{% url 'find_your_cab:ratepage' cabdriver.id %}" >{{ cabdriver.name_driver }}</td>
+            <td>{{ cabdriver.point }}</td>
         </tr>
         {% endfor %}
     {% else %}
