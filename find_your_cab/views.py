@@ -10,4 +10,18 @@ def callRatePage(request, cab_id):
     driv_inform = get_object_or_404(CabDriver, pk=cab_id)
     return render(request, 'find_your_cab/rate_page.html', {'driv_inform':driv_inform})
 
+def savePoint(request, cab_id):
+    driv_inform = CabDriver.objects.order_by('-point')
+    cab_driv = get_object_or_404(CabDriver, pk=cab_id)
+    try:
+        point = request.POST['point']
+    except:
+        point = 0
+    before_point = cab_driv.point
+    cab_driv.point = (before_point + int(point))/2
+    cab_driv.save()
+    return render(request, 'find_your_cab/home.html', {'driv_inform':driv_inform})
+
+  
+
 
