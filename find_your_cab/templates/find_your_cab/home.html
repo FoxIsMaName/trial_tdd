@@ -1,11 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
 <html>
 <head>
     <title>find your cab</title>
 </head>
 <body>
-    <h1 style="text-align:center;">Let find your cab</h1>
-
-    <table border=1>
+    <h1>Taxi</h1>
+    <h2>This is the list of taxi around here</h2>
+    <p style="text-align:center;">ผู้ใช้:{{user_inform.name_user}}</p>
+    <table border=1 align="center" id="t01">
         <tr>
             <td>ID driver</td>
             <td>Name driver</td>

@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
 <html>
 <head>
     <title>Rate Page</title>
@@ -5,9 +7,16 @@
 <body>
     <form action="{% url 'find_your_cab:savePoint' driv_inform.id %}" method="post">
     {% csrf_token %}
-    <h1 style="text-align:center;">Rate him/her</h1>
+    <h1>Taxi</h1>
+    <h2>Please rate him/her</h2>
     <p>Rate : {{ driv_inform.name_driver }}</p>
-    <input type="number" name="point" min="1" max="5">
+    <select name="point" id="id_type">
+        <option value = "1" >&#9733;</option>
+        <option value = "2" >&#9733; &#9733;</option>
+        <option value = "3" >&#9733; &#9733; &#9733;</option>
+        <option value = "4" >&#9733; &#9733; &#9733; &#9733;</option>
+        <option value = "5" >&#9733; &#9733; &#9733; &#9733; &#9733;</option>
+    </select>
     <input type = "submit" >            
     </form>
 </body>

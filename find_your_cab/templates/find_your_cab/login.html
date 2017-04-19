@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>log in</title>
+</head>
+<body>
+    <h1>Taxi<h1>
+    <h2>Log In</h2>
+        <form action="{% url 'find_your_cab:homepage'%}" method="post"> 
+        {% csrf_token %}
+        Name:<br>
+        <input type="text" name="name"><br>
+        Password:<br>
+        <input type="text" name="password">
+        <input type = "submit">
+        </form>
+</body>
+</html>

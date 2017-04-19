@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
+<html>
+<style>
+.circleBtn {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-style: italic;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25%;
+
+}
+
+.circleBtn:hover {
+    background-color: #4CAF00;
+}
+
+</style>
+<head>
+    <title>thank you</title>
+</head>
+<body>
+    <h1>Taxi</h1>
+    <h2>Thank you</h2>
+    <a href="{% url 'find_your_cab:homepage' %}" class="circleBtn"> {{"back to home page"}} </a>
+</body>
+</html>

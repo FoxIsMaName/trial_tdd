@@ -5,14 +5,14 @@ from django.utils import timezone
 
 class CabUser(models.Model):
     name_user = models.CharField(max_length=100,default='')
-    id_user = models.IntegerField(default=0)
+    password_user = models.IntegerField(default=0)
     #date_user = models.DateTimeField('date published')
 
     def __str__(self):
         return self.name_user
 
     def __int__(self):
-        return self.id_user
+        return self.password_user
 
     #def __str__(self):
      #   return self.date_user
