@@ -6,7 +6,6 @@ from django.utils import timezone
 class CabUser(models.Model):
     name_user = models.CharField(max_length=100,default='')
     password_user = models.IntegerField(default=0)
-    #date_user = models.DateTimeField('date published')
 
     def __str__(self):
         return self.name_user
@@ -14,23 +13,23 @@ class CabUser(models.Model):
     def __int__(self):
         return self.password_user
 
-    #def __str__(self):
-     #   return self.date_user
-
 class CabDriver(models.Model):
     name_driver = models.CharField(max_length=100,default='')
-    #id_driver = models.IntegerField(default=0)
-    #date_driver = models.DateTimeField('date published')
     point = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name_driver
 
-    #def __int__(self):
-     #   return self.id_driver
-
-    #def __str__(self):
-    #    return self.date_driver
-
     def __int__(self):
         return self.point
+
+class DriverHistory(models.Model):
+    cab_driver = models.ForeignKey(CabDriver, on_delete=models.CASCADE)
+    cab_user = models.CharField(max_length=100,default='')
+    driv_point = models.FloatField(default=0)
+
+    def __str__(self):
+        return self.cab_user
+
+    def __flo__(self):
+        return self.driv_point

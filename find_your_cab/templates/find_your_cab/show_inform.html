@@ -1,18 +1,18 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
 <html>
-<head>  
+<head>
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>log in</title>
     <style>
      body { background: lightgreen }
     </style>
-    <title>thank you</title>
 </head>
 <body>
-<center>
-    <h1>Taxi</h1>
-    <h2>Thank you</h2>
-    <a href="{% url 'find_your_cab:loginpage' %}" class="btn btn-primary" id="back_home"> {{"back to log in"}} </a>
-</center>
+    <h1>Taxi<h1>
+    <h2>Thank for sign in:{{name}}</h2>
+    <center>
+    <a href="{% url 'find_your_cab:loginpage' %}" class="btn btn-primary" id="back_home"> {{"back to home page"}} </a>
+    </center>
 </body>
 </html>

@@ -2,22 +2,51 @@
 <link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
 <html>
 <head>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Rate Page</title>
+    <style>
+     body { background: lightgreen }
+    </style>
 </head>
+
 <body>
-    <form action="{% url 'find_your_cab:savePoint' driv_inform.id %}" method="post">
-    {% csrf_token %}
     <h1>Taxi</h1>
     <h2>Please rate him/her</h2>
     <p>Rate : {{ driv_inform.name_driver }}</p>
-    <select name="point" id="id_type">
-        <option value = "1" >&#9733;</option>
-        <option value = "2" >&#9733; &#9733;</option>
-        <option value = "3" >&#9733; &#9733; &#9733;</option>
-        <option value = "4" >&#9733; &#9733; &#9733; &#9733;</option>
-        <option value = "5" >&#9733; &#9733; &#9733; &#9733; &#9733;</option>
-    </select>
-    <input type = "submit" >            
+    <p>point:
+    {% if driv_inform.point == 5 %}
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+    {% elif driv_inform.point == 4 %}
+            &#9733; &#9733; &#9733; &#9733; 
+    {% elif driv_inform.point == 3 %}
+            &#9733; &#9733; &#9733; 
+    {% elif driv_inform.point == 2 %}
+            &#9733; &#9733; 
+    {% elif driv_inform.point == 1 %}
+            &#9733;
+    {% endif %}</p>
+    <br>
+    <form action="{% url 'find_your_cab:savePoint' driv_inform.id user_inform.id %}" method="post">
+    {% csrf_token %}
+      <div class="input-group">
+
+        <span class="input-group-addon">
+        <input type="radio" name="point" value = "1" id="one"  >1 &#9733;
+        </span><br>
+        <span class="input-group-addon">
+        <input type="radio" name="point" value = "2" id="two" >2 &#9733;
+        </span><br>
+        <span class="input-group-addon">
+        <input type="radio" name="point" value = "3" id="three" >3 &#9733;</span><br>
+        <span class="input-group-addon">
+        <input type="radio" name="point" value = "4" id="four" >4 &#9733;</span><br>
+        <span class="input-group-addon">
+        <input type="radio" name="point" value = "5" id="five" >5 &#9733;<br></span>
+
+        <input type = "submit" class="btn btn-primary" > 
+
+      </div>         
     </form>
 </body>
+
 </html>

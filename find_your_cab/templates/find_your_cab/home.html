@@ -2,33 +2,23 @@
 <link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
 <html>
 <head>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>find your cab</title>
+    <style>
+     body { background: lightgreen }
+    </style>
 </head>
 <body>
+<center>
     <h1>Taxi</h1>
     <h2>This is the list of taxi around here</h2>
-    <p style="text-align:center;">ผู้ใช้:{{user_inform.name_user}}</p>
-    <table border=1 align="center" id="t01">
-        <tr>
-            <td>ID driver</td>
-            <td>Name driver</td>
-            <td>Point</td>
-        </tr>    
-   {% if driv_inform %}
-        {% for cabdriver in driv_inform %}
-        <tr>
-            <td>{{ cabdriver.id}}</td>
-            <td><a  href="{% url 'find_your_cab:ratepage' cabdriver.id %}" >{{ cabdriver.name_driver }}</td>
-            <td>{{ cabdriver.point }}</td>
-        </tr>
-        {% endfor %}
-    {% else %}
-        <tr>
-            <td>no data</td>
-            <td>no data</td>
-            <td>no data</td>
-        </tr>
-    {% endif%}
-    </table>
+    <p style="text-align:center;">User:{{user.username}}</p>
+    <form action="{% url 'find_your_cab:ratepage' user.id %}" method="post"> 
+    {% csrf_token %}
+    <p>Name</p>
+    <input type="text" name="name_driv" id="name_driv"><br><br>
+    <input type="submit" class="btn btn-primary">
+    </form>
+</center>
 </body>
 </html>
