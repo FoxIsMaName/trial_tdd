@@ -10,17 +10,18 @@
 </head>
 <body>
 <center>
-    <h1>Taxi<h1>
+    <h1>Rate your cab<h1>
     <h2>Log In</h2>
         <form action="{% url 'find_your_cab:homepage'%}" method="post"> 
         {% csrf_token %}
         <p>Name:</p><br>
         <input type="text" name="name" id="name_id" ><br>
         <p>Password:</p><br>
-        <input type="text" name="password" id="password_id"><br><br>
+        <input type="password" name="password" id="password_id"><br><br>
         <input type="submit" id="submit_id" class="btn btn-primary">
         </form>
     <a href="{% url 'find_your_cab:signinpage' %}" class="btn btn-primary" id="sign_in"> {{"Sign In"}} </a>
+    <a href="{% url 'find_your_cab:aboutpage' %}" class="btn btn-primary" id="about" >{{"About"}}</a>
 </center>
 </body>
 </html>

@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
+<head>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>About</title>
+    <style>
+     body { background: lightgreen }
+    </style>
+</head>
+<body>
+    <h1>Rate your taxi</h1>
+    <h2>About</h2>
+    <center>
+    <p style = " font-size:130%;" >    เพื่อที่จะจัดคุณภาพของ taxi เราจะต้องมีการให้คะแนนของการบริการของ taxi แต่ละคันเพื่อที่<br> taxi แต่ละคันจะได้นำข้อผิดพลาดไปแก้ไข 
+       และนำไปบริการลูกค้าคนถัดไปได้ดีขึ้น<br> จะทำให้ภาพลักษณ์ของ taxi มีคุณภาพที่ดีขึ้น
+    </p>
+    
+    <a href="{% url 'find_your_cab:loginpage' %}" class="btn btn-primary" id="back_home"> {{"back to log in"}} </a></center>
+</body>

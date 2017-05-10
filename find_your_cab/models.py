@@ -25,11 +25,15 @@ class CabDriver(models.Model):
 
 class DriverHistory(models.Model):
     cab_driver = models.ForeignKey(CabDriver, on_delete=models.CASCADE)
-    cab_user = models.CharField(max_length=100,default='')
+    cab_user = models.CharField(max_length=100,default='')    
     driv_point = models.FloatField(default=0)
+    comment = models.CharField(max_length=200,default='')
 
     def __str__(self):
         return self.cab_user
 
     def __flo__(self):
         return self.driv_point
+
+    def __str__(self):
+        return self.comment

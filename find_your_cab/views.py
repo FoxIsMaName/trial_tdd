@@ -39,9 +39,11 @@ def savePoint(request, cab_id, user_id):
     user_inform = User.objects.get(id=user_id)
     try:
         point = request.POST['point']
+        comment = request.POST['comment']
     except:
         point = 0
-    driv_inform.driverhistory_set.create(cab_user=user_inform.username, driv_point = point)
+        comment = ''
+    driv_inform.driverhistory_set.create(cab_user=user_inform.username, driv_point = point, comment = comment)
 
     history_driv = DriverHistory.objects.order_by('driv_point') 
     n = 0
@@ -68,4 +70,5 @@ def saveUser(request):
     cabuser.save()
     return render(request, 'find_your_cab/show_inform.html', {'name':name})
 
-
+def callAboutPage(request):
+    return render(request, 'find_your_cab/aboutpage.html', '')
