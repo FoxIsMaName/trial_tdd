@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
+<html>
+<head>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+     body { background: lightgreen }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Rate your cab<h1>
+    <h2>Log In</h2>
+        <form action="{% block form_action %}{% endblock %}" method="post"> 
+        {% csrf_token %}
+        <p>Name:</p><br>
+        <input type="text" name="name" id="name_id" ><br>
+        <p>Password:</p><br>
+        <input type="password" name="password" id="password_id"><br><br>
+        <input type="submit" id="submit_id" class="btn btn-primary">
+        </form>
+    {% block link %}   
+    {% endblock %}
+</center>
+</body>
+</html>

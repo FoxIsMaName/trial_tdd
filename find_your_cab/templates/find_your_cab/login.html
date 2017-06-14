@@ -1,27 +1,9 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
-<html>
-<head>
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <title>log in</title>
-    <style>
-     body { background: lightgreen }
-    </style>
-</head>
-<body>
-<center>
-    <h1>Rate your cab<h1>
-    <h2>Log In</h2>
-        <form action="{% url 'find_your_cab:homepage'%}" method="post"> 
-        {% csrf_token %}
-        <p>Name:</p><br>
-        <input type="text" name="name" id="name_id" ><br>
-        <p>Password:</p><br>
-        <input type="password" name="password" id="password_id"><br><br>
-        <input type="submit" id="submit_id" class="btn btn-primary">
-        </form>
+{% extends 'find_your_cab/id_pass_input_b.html' %}
+{% block title %}Log in{% endblock %}
+{% block form_action %}{% url 'find_your_cab:homepage'%}{% endblock %}
+{% block link %}    
     <a href="{% url 'find_your_cab:signinpage' %}" class="btn btn-primary" id="sign_in"> {{"Sign In"}} </a><br><br>
     <a href="{% url 'find_your_cab:aboutpage' %}" class="btn btn-primary" id="about" >{{"About"}}</a>
-</center>
-</body>
-</html>
+{% endblock %}
+
+
