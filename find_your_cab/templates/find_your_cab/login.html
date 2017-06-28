@@ -1,5 +1,6 @@
 {% extends 'find_your_cab/id_pass_input_b.html' %}
 {% block title %}Log in{% endblock %}
+{% block header %}Log in{% endblock %}
 {% block form_action %}{% url 'find_your_cab:homepage'%}{% endblock %}
 {% block link %}    
     <a href="{% url 'find_your_cab:signinpage' %}" class="btn btn-primary" id="sign_in"> {{"Sign In"}} </a><br><br>

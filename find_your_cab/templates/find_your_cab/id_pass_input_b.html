@@ -11,7 +11,7 @@
 <body>
 <center>
     <h1>Rate your cab<h1>
-    <h2>Log In</h2>
+    <h2>{% block header %}{% endblock %}</h2>
         <form action="{% block form_action %}{% endblock %}" method="post"> 
         {% csrf_token %}
         <p>Name:</p><br>

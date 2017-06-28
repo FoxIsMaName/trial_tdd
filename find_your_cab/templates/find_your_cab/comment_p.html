@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>top comment</title>
+</head>
+<body>
+    <h1>Rate your taxi</h1>
+    {% if account_list %}
+    <table border=1 style="width:50%;clear:both" align="center" bgcolor=#00bfff>
+        <tr>
+            <td>Note</td>
+            <td>Money</td>
+            <td>Type</td>
+            <td>Date</td>
+        </tr>
+    {% for account in account_list %}
+        <tr>
+            <td>
+                {{ account.note }}&#9733;
+            </td>
+            <td>{{ account.money }} Baths</td>
+            <td>{{ account.type_note }}</td>
+            <td>{{ account.pub_date }}</td>
+        </tr>
+    {% endfor %}
+        <tr>
+            <td style="text-align: center;" colspan="5">money sum : {{ money_sum }} Baths</td>
+        </tr>
+    <a href="{% url 'ManMon:mainpage'%}" class="circleBtn">{{"back to main page"}}</a>
+{% else %}
+    <p> Insert your income</p>
+{% endif %}
+</body>
+</html>
