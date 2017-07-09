@@ -1,9 +1,9 @@
-body {
-    background: white url("images/taxi theme.png") no-repeat  ;
-}
+body { background: lightgreen }
 h1 {
-    text-align:center;
-    font-size:250%;
+    color:rgb(0, 0, 0);
+}
+p {
+    font-size:150%;
 }
 
 h2 {
@@ -11,17 +11,9 @@ h2 {
     font-size:200%;
 }
 
-p {
-    font-size:170%;
-}
-
-a {
-    color:rgb(0, 0, 0);
-}
-
 table {
     border-collapse: collapse;
-    width: 25%;
+    width: 50%;
 }
 
 th, td {
@@ -30,24 +22,16 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-table#t01 {
-    width: 25%;    
-    background-color: #338733;
-}
-
-.circleBtn {
-    background-color: #4CAF50; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-style: italic;
-    text-decoration: none;
-    display: inline-block;
+textarea {
+    width: 30%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
     font-size: 16px;
-    cursor: pointer;
-    border-radius: 25%;
-
+    resize: none;
 }
 
 .circleBtn:hover {

@@ -12,7 +12,7 @@
 <center>
     <h1>Rate your taxi</h1>
     <h2>This is the list of taxi around here</h2>
-    <p style="text-align:center;">User:{{user.username}}</p>
+    <p style="font-size:150%;">User:{{user.username}}</p>
     <form action="{% url 'find_your_cab:ratepage' user.id %}" method="post"> 
     {% csrf_token %}
     <p>Name</p>

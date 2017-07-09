@@ -1,15 +1,14 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'find_your_cab/style.css' %}" />
 <html>
+
 <head>
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Rate Page</title>
-    <style>
-     body { background: lightgreen }
-    </style>
+
 </head>
 
 <body>
+<center>
     <h1>Rate your taxi</h1>
     <h2>Please rate him/her</h2>
     <p>Rate : {{ driv_inform.name_driver }}</p>
@@ -29,25 +28,54 @@
     <form action="{% url 'find_your_cab:savePoint' driv_inform.id user_inform.id %}" method="post">
     {% csrf_token %}
       <div class="input-group">
+      <table style="width:5%;clear:both" align="center" >
+        <tr>
+            <td>
+                <input type="radio" name="point" value = "1" id="one"  >
+            </td>
+            <td> 1 </td>
+            <td>&#9733;</td>
+        </tr>             
+        <tr>
+            <td>
+                <input type="radio" name="point" value = "2" id="two" > 
+            </td>
+            <td> 2 </td>
+            <td>&#9733;</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="point" value = "3" id="three" >
+            </td>
+            <td> 3 </td>
+            <td>&#9733;</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="point" value = "4" id="four" >         
+            </td>
+            <td> 4 </td>
+            <td>&#9733;</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="point" value = "5" id="five" >
+            </td>
+            <td> 5 </td>
+            <td>&#9733;</td>
+        </tr>
+      </table>
+      <br>
+      <p>comments</p>
+      <textarea name="comment" >What do you think?</textarea><br><br>
+      
 
-        <span class="input-group-addon">
-        <input type="radio" name="point" value = "1" id="one"  >1 &#9733;
-        </span><br>
-        <span class="input-group-addon">
-        <input type="radio" name="point" value = "2" id="two" >2 &#9733;
-        </span><br>
-        <span class="input-group-addon">
-        <input type="radio" name="point" value = "3" id="three" >3 &#9733;</span><br>
-        <span class="input-group-addon">
-        <input type="radio" name="point" value = "4" id="four" >4 &#9733;</span><br>
-        <span class="input-group-addon">
-        <input type="radio" name="point" value = "5" id="five" >5 &#9733;<br></span>
-
-        <input type="text" name="comment" id="comment" placeholder="comment">
-        <input type = "submit" class="btn btn-primary" > 
-
+      <input type = "submit" class="btn btn-primary" > 
+      
+      
       </div>         
     </form>
+</cen>
 </body>
 
 </html>
